@@ -1,0 +1,12 @@
+﻿http://www.geeksforgeeks.org/quick-sort/
+
+Time complexity of Quick Sort is  Average/Best Ω(n log(n)): Worst o(n^2)
+Space complexity: log(n)
+
+Worst Case: The worst case occurs when the partition process always picks greatest
+or smallest element as pivot. If we consider above partition strategy where last element is always picked as pivot, the worst case
+would occur when the array is already sorted in increasing or decreasing order. Following is recurrence for worst case.
+
+Best Case: The best case occurs when the partition process always
+picks the middle element as pivot. Following is recurrence for best case.
+
