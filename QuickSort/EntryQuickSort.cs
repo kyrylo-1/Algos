@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
-
 namespace QuickSort
 {
     /// <summary>
@@ -16,12 +15,14 @@ namespace QuickSort
     {
         static void Main(string[] args)
         {
-            var array = new int[] { 3, 9, 1, 34, 9, 10, -3 };
+            var array = new int[] { 3, 1, 4, 1, 5, 9, 2, 6, 5, 3 };
             Console.WriteLine("Before sorting");
             array.WriteEachElement();
 
             Console.WriteLine("\n\nAfter QuickSort");
-            Sort(array);
+            //Sort(array);
+
+            QuickSortIterative(array);
             array.WriteEachElement();
         }
 
@@ -45,36 +46,69 @@ namespace QuickSort
         // Hoare partition
         private static int Partition(int[] ar, int lo, int hi)
         {
-            //int pivot = ar[lo];
-            //int pivot = ar[new Random().Next(lo, hi + 1)];
-            int pivot = ar[lo];
-            int left = lo - 1; // Initialize left index
-            int right = hi + 1; // Initialize right index
+            int pivotNumb = ar[lo]; // maybe ar[new Random().Next(lo, hi + 1)];
+            int iLeft = lo - 1; // Initialize left index
+            int iRight = hi + 1; // Initialize right index
 
             while (true)
             {
                 //increment the 'left' index until array with 'left' index less or equal the pivot     
                 do
                 {
-                    left++;
+                    iLeft++;
                 }
-                while (ar[left] < pivot);
+                while (ar[iLeft] < pivotNumb);
 
                 //decrement the 'right' index until array with 'right' index more or equal the pivot
                 do
                 {
-                    right--;
+                    iRight--;
                 }
-                while (ar[right] > pivot);
+                while (ar[iRight] > pivotNumb);
 
-                if (left < right)
-                    ArrayTools.Swap(ar, left, right);
+                if (iLeft < iRight)
+                    ArrayTools.Swap(ar, iLeft, iRight);
 
                 else
-                    return right;
+                    return iRight;
             }
         }
 
+        private static void QuickSortIterative(int[] arr)
+        {
+            var stack = new Stack<Pair>();
 
+            int iLow = 0;
+            int iHigh = arr.Length - 1;
+
+            stack.Push(new Pair(iLow, iHigh));
+
+            while (stack.Any())
+            {
+                iLow = stack.Peek().lowIndex;
+                iHigh = stack.Peek().highIndex;
+                stack.Pop();
+
+                if (iLow >= iHigh)
+                    continue;
+
+                int pi = Partition(arr, iLow, iHigh);
+
+                stack.Push(new Pair(iLow, pi));
+                stack.Push(new Pair(pi + 1, iHigh));
+            }
+        }
+
+        private class Pair
+        {
+            internal readonly int lowIndex;
+            internal readonly int highIndex;
+
+            public Pair(int lowIndex, int highIndex)
+            {
+                this.lowIndex = lowIndex;
+                this.highIndex = highIndex;
+            }
+        }
     }
 }
