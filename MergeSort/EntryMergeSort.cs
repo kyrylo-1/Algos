@@ -11,9 +11,14 @@ namespace MergeSort
             Console.WriteLine("Before sorting");
             array.WriteEachElement();
 
-            Console.WriteLine("\n\nAfter SelectionSort");
-            MergeSorter.Sort(array);
+            //Console.WriteLine("\n\nAfter SelectionSort");
+            //MergeSorter.Sort(array);
+            //array.WriteEachElement();
+
+            Console.WriteLine("\n\nAfter BottomUp merge sort");
+            MergeSorterBottomUp.Sort(array);
             array.WriteEachElement();
+            Console.ReadLine();
         }
 
     }

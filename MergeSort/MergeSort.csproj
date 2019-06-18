@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="EntryMergeSort.cs" />
     <Compile Include="MergeSorter.cs" />
+    <Compile Include="MergeSorterBottomUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
