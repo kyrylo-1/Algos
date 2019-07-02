@@ -15,8 +15,8 @@ namespace InsertionSort
     {
         static void Main(string[] args)
         {
-            //var array = new int[] { 3, 9, 1, 34, 9, 10, -3 };
-            var array = new int[] { 1, 3, 5, 6, 7, 9 };
+            var array = new int[] { 3, 9, 1, 34, 9, 10, -3 };
+            //var array = new int[] { 1, 3, 5, 6, 7, 9 };
             Console.WriteLine("Before sorting");
             array.WriteEachElement();
 

@@ -52,11 +52,23 @@ namespace TreeTraversal
         {
             var prog = new ProgTreeTraversal();
 
+            Console.WriteLine("==========POST Order===============");
             prog.PrintPostOrder(prog.MyTreeNode);
-            //prog.PrintPreOrder(prog.MyTreeNode);
-            //prog.PrintInOrder(prog.MyTreeNode);
+            Console.WriteLine("\nIteratively");
+            prog.PrintPostOrderIteratively(prog.MyTreeNode);
+
+            Console.WriteLine("\n\n==========PRE ORDER===============");
+            prog.PrintPreOrder(prog.MyTreeNode);
+            Console.WriteLine("\nIteratively");
+            prog.PrintPreOrderIteratively(prog.MyTreeNode);
+
+            Console.WriteLine("\n\n==========IN ORDER===============");
+            prog.PrintInOrder(prog.MyTreeNode);
+            Console.WriteLine("\nIteratively");
+            prog.PrintInOrderIteratively(prog.MyTreeNode);
         }
 
+        #region POSTORDER
         void PrintPostOrder(TreeNode node)
         {
             if (node == null)
@@ -68,6 +80,36 @@ namespace TreeTraversal
             Console.Write(node.val + " ");
         }
 
+        void PrintPostOrderIteratively(TreeNode root)
+        {
+            if (root == null)
+                return;
+
+            var list = new LinkedList<int>();
+
+            var stack = new Stack<TreeNode>();
+            stack.Push(root);
+
+            while (stack.Any())
+            {
+                TreeNode curr = stack.Pop();
+                list.AddFirst(curr.val);
+
+                if (curr.left != null)
+                    stack.Push(curr.left);
+               
+                if (curr.right != null)
+                    stack.Push(curr.right);                
+            }
+
+            foreach (var item in list)
+            {
+                Console.Write(item + " ");
+            }
+        }
+        #endregion
+
+        #region PREORDER
         void PrintPreOrder(TreeNode node)
         {
             if (node == null)
@@ -78,6 +120,29 @@ namespace TreeTraversal
             PrintPreOrder(node.right);
         }
 
+        void PrintPreOrderIteratively(TreeNode root)
+        {
+            if (root == null)
+                return;
+
+            var stack = new Stack<TreeNode>();
+            stack.Push(root);
+
+            while (stack.Any())
+            {
+                root = stack.Pop();
+                Console.Write(root.val + " ");
+
+                if (root.right != null)
+                    stack.Push(root.right);
+
+                if (root.left != null)
+                    stack.Push(root.left);
+            }
+        }
+        #endregion
+
+        #region INORDER
         void PrintInOrder(TreeNode node)
         {
             if (node == null)
@@ -87,5 +152,30 @@ namespace TreeTraversal
             Console.Write(node.val + " ");
             PrintInOrder(node.right);
         }
+
+        void PrintInOrderIteratively(TreeNode root)
+        {
+            if (root == null)
+                return;
+
+            var stack = new Stack<TreeNode>();
+            TreeNode pre = null;
+
+            while (root != null || stack.Any())
+            {
+                while (root != null)
+                {
+                    stack.Push(root);
+                    root = root.left;
+                }
+
+                root = stack.Pop();
+                Console.Write(root.val + " ");
+
+                pre = root;
+                root = root.right;
+            }
+        }
+        #endregion
     }
 }
