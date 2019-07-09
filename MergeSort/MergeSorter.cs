@@ -43,7 +43,7 @@ namespace MergeSort
 
             int tmpIndex = 0;
 
-            while ((left <= middle) && (right <= high))
+            while (left <= middle && right <= high)
             {
                 if (input[left] < input[right])
                 {

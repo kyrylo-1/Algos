@@ -16,8 +16,8 @@ namespace MergeSort
             //array.WriteEachElement();
 
             Console.WriteLine("\n\nAfter BottomUp merge sort");
-            MergeSorterBottomUp.Sort(array);
-            array.WriteEachElement();
+            MergeSorter.Sort(array);
+            //array.WriteEachElement();
             Console.ReadLine();
         }
 
