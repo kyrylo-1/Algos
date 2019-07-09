@@ -1,5 +1,7 @@
 # Algos
 
+Related Gitbook: [cs-notes](https://app.gitbook.com/@kir-avramenko/s/cs-notes/)
+
 Design:
 HashTable, what is hashcode
 List
