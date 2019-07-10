@@ -42,11 +42,17 @@ namespace Common
                 return;
 
             foreach (var item in array)
-            {
-                Console.Write(item.ToString() + " ");
-            }
+                Console.Write(item.ToString() + " ");            
         }
 
+        public static void WriteEachElement<T>(this List<T> list)
+        {
+            if (list == null)
+                return;
+
+            foreach (var item in list)
+                Console.Write(item.ToString() + " ");
+        }
 
         /// <summary>
         /// Populates a collection with a specific value.
