@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountSort", "CountSort\Coun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BucketSortCsharp", "BucketSortCsharp\BucketSortCsharp.csproj", "{1452130D-2E4D-46A6-A181-30C03F4A7892}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadixSort", "RadixSort\RadixSort.csproj", "{FB34CB66-668E-44D4-8660-80A071918B4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{1452130D-2E4D-46A6-A181-30C03F4A7892}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1452130D-2E4D-46A6-A181-30C03F4A7892}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1452130D-2E4D-46A6-A181-30C03F4A7892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB34CB66-668E-44D4-8660-80A071918B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB34CB66-668E-44D4-8660-80A071918B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB34CB66-668E-44D4-8660-80A071918B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB34CB66-668E-44D4-8660-80A071918B4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +116,7 @@ Global
 		{7D03C525-992F-43AA-A2FE-DB1B3B51AF37} = {BE52AAA3-4723-4C04-BE6B-74805D447871}
 		{042412B0-6F68-4A02-BD42-04823B8CED11} = {9F13D495-001E-47AA-8F5D-7C8D1FB5AFF6}
 		{1452130D-2E4D-46A6-A181-30C03F4A7892} = {9F13D495-001E-47AA-8F5D-7C8D1FB5AFF6}
+		{FB34CB66-668E-44D4-8660-80A071918B4D} = {9F13D495-001E-47AA-8F5D-7C8D1FB5AFF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {482C88A2-169E-4338-A9A2-617D33ECCC63}
